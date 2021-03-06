@@ -1,0 +1,15 @@
+1/ Topics that we want to discuss during the meeting:
+
+2/ What we'll try to do this week:
+Check the patchwork list and choose something that you're interested in:
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
+
+ta:
+- review the following:
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=232477
+https://patchwork.ozlabs.org/project/linux-mtd/patch/20210305234552.19204-1-michael@walle.cc/
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=228705
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=228490
+- send few cleanup patches
+
+3/ Meeting notes/minutes
