@@ -1,0 +1,22 @@
+1/ Topics that we want to discuss during the meeting:
+py: OSPI PHY calibration. Why it is needed and how to best implement it.
+
+2/ What we'll try to do this week:
+Check the patchwork list and choose something that you're interested in:
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
+
+mw:
+
+py:
+
+- Continue polishing the PHY calibration series. Maybe try to find out a way to
+  use nvmem cells with commandline partitions.
+- Review https://patchwork.ozlabs.org/project/linux-mtd/list/?series=233628
+  I reviewed a similar series by Takahiro for U-Boot so it should hopefully have
+  all my comments already fixed.
+
+ta:
+
+vr:
+
+3/ Meeting notes/minutes
