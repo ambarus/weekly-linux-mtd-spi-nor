@@ -13,3 +13,16 @@ ta:
 vr:
 
 3/ Meeting notes/minutes
+
+4/TODO queue
+mw:
+
+py:
+
+ta:
+a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
+mtd.
+b/ SFDP init first, then flash_info static init if still needed
+c/ frequency sync between SPIMEM and SPI controller
+
+vr:
