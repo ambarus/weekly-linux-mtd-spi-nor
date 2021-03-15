@@ -20,3 +20,8 @@ ta:
 vr:
 
 3/ Meeting notes/minutes
+- Vignesh still working on conversion to dummy cycle. Maybe something by this week.
+- How to handle manufacturer ID being repeated without continuation codes? Vignesh to take a look.
+- Tudor to read over the email explaining the need for PHY calibration.
+- LS___ controller uses calibration. Need to see what is common between it and Cadence controller.
+- OTP series looks OK. Tudor has some small suggestions. Looks ready to merge.
