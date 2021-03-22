@@ -3,6 +3,8 @@ patch/topic?
 mw:
 
 py:
+- Reviewed https://patchwork.ozlabs.org/project/linux-mtd/list/?series=233628.
+- Not much progress on the PHY calibration front.
 
 ta:
 - not so much progress. Looked a bit over OTP, SWP.
@@ -17,6 +19,8 @@ https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q
 mw:
 
 py:
+- Review https://patchwork.ozlabs.org/project/linux-mtd/list/?series=234846.
+  Should address the minor comments I had on the previous version.
 
 ta:
 - conclude OTP support
