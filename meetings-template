@@ -1,9 +1,5 @@
-1/ Topics that we want to discuss during the meeting:
-
-2/ What we'll try to do this week:
-Check the patchwork list and choose something that you're interested in:
-https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
-
+1/ What have I accomplished last week? Do I need a second opinion on a specific
+patch/topic?
 mw:
 
 py:
@@ -12,9 +8,22 @@ ta:
 
 vr:
 
-3/ Meeting notes/minutes
+2/ Topics that we want to discuss during the meeting:
 
-4/TODO queue
+3/ What we'll try to do this week:
+Check the patchwork list and choose something that you're interested in:
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
+mw:
+
+py:
+
+ta:
+
+vr:
+
+4/ Meeting notes/minutes
+
+5/TODO queue
 mw:
 
 py:
