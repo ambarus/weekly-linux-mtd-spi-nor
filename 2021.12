@@ -1,6 +1,13 @@
 1/ What have I accomplished last week? Do I need a second opinion on a specific
 patch/topic?
 mw:
+- new SFDP patch version, using SFDP cache instead of reading on-demand
+- worked on NVMEM support for MTD OTP (fact/user_prot). use-case is to have
+  a network card get its MAC address from the SPI NOR OTP region.
+  Decided to add it to the MTD layer, so it will be also available to any
+  flashes which supports OTP, not just SPI NOR.
+- very basic SFDP database https://github.com/mwalle/spi-nor-sfdp
+  (private repo for now)
 
 py:
 - Reviewed https://patchwork.ozlabs.org/project/linux-mtd/list/?series=233628.
@@ -16,6 +23,7 @@ vr:
 3/ What we'll try to do this week:
 Check the patchwork list and choose something that you're interested in:
 https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
+
 mw:
 
 py:
@@ -30,16 +38,22 @@ ta:
 vr:
 
 4/ Meeting notes/minutes
+- (ta) revert Macronix patch which added new flash but reused the same id, also
+  added SECT_4K, but this is also true for the old flash, so there will be
+  a second patch to add SECT_4K to the old one, too.
+- (ta) review OTP and spansion series
+- (py) review SFDP series
 
 5/TODO queue
 mw:
+a/ different flash names for same JEDEC vendor ID
 
 py:
 
 ta:
-a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
-mtd.
-b/ SFDP init first, then flash_info static init if still needed
-c/ frequency sync between SPIMEM and SPI controller
+- FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver
+  under mtd.
+- SFDP init first, then flash_info static init if still needed
+- frequency sync between SPIMEM and SPI controller
 
 vr:
