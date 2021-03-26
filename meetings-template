@@ -28,6 +28,7 @@ mw:
 a/ different flash names for same JEDEC vendor ID
 
 py:
+a/ Clean up how address width is calculated.
 
 ta:
 a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
