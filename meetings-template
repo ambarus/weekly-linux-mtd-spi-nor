@@ -23,7 +23,7 @@ vr:
 
 4/ Meeting notes/minutes
 
-5/TODO queue
+5/TODO queue - long term goal
 mw:
 a/ different flash names for same JEDEC vendor ID
 
@@ -37,3 +37,4 @@ b/ SFDP init first, then flash_info static init if still needed
 c/ frequency sync between SPIMEM and SPI controller
 
 vr:
+a/ dummy.nbytes conversion to dummy.cycles
