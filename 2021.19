@@ -1,0 +1,71 @@
+1/ What have I accomplished last week? Do I need a second opinion on a specific
+patch/topic?
+mw:
+ - new SFDP patch version
+
+py:
+- Patch for the odd length/address reads or writes in 8D-8D-8D flashes.
+
+ta:
+
+vr:
+ - likely take care of the patches for the v5.14 release
+
+2/ Topics that we want to discuss during the meeting:
+ta:
+- avoid collisions between flash IDs: jep106BA Standard Manufacturer’s
+Identification Code:
+https://patchwork.ozlabs.org/project/linux-mtd/patch/SN6PR06MB5342C82F372F37FB8E21B327A57A9@SN6PR06MB5342.namprd06.prod.outlook.com/
+SFDP differentiator or new compatible, SPI NOR opcodes?.
+
+mw:
+ - review PHY calib patches
+   -  NXP FAE at least responded that you have to do only once on the
+      LS1028A, but at the same time they didn't repsond to the question how
+      it behhaves when the temperature drifts
+ - SFDP database: generate hash/crc for flashes SFDP tables and use the sha
+  as differentiator. Do we want to keep a DB?
+
+3/ What we'll try to do this week:
+Check the patchwork list and choose something that you're interested in:
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
+
+py:
+ - No pending patches to review.
+
+ta:
+  Review:
+   - takahiro's spansion patches
+   - manuf specific ops:
+     https://patchwork.ozlabs.org/project/linux-mtd/list/?series=237043
+   - py's phy calib
+  Analyse/write code:
+   - FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver
+     under mtd
+   - parse manufacturer SFDP backbone -> applies to mchp's sst26 flashes,
+     they define a vendor specific sfdp table, where the memory organization
+     for the individual block protection is described. Parse that and add
+     Individual Block Locking ops.
+
+vr:
+
+mw:
+ - flash names list
+ - phy calib series
+
+4/TODO queue - long term goal
+mw:
+a/ different flash names for same JEDEC vendor ID
+
+py:
+a/ Clean up how address width is calculated.
+
+ta:
+a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
+mtd.
+b/ SFDP init first, then flash_info static init if still needed
+c/ frequency sync between SPIMEM and SPI controller
+d/ SPI NOR documentation
+
+vr:
+a/ dummy.nbytes conversion to dummy.cycles
