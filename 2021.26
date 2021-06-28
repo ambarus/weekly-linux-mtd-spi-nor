@@ -1,0 +1,88 @@
+1/ What have I accomplished last week? Do I need a second opinion on a specific
+patch/topic?
+mw:
+
+py:
+
+ta:
+
+vr:
+ - Has taken care of the patches for the v5.14 release
+
+2/ Topics that we want to discuss during the meeting:
+ta:
+- Differentiate flashes at runtime.
+  - On Macronix flash, one has SFDP other doesn't. Macronix recommends agaist it but should be no risk.
+  - Try to differentiate between SFDP data if flashes both have SFDP.
+  - If two manuf have similar flashes with no continuation codes, have a separate
+    driver that will mark the flashes for collision and differentiate at runtime.
+  - Last resort will be a compatible in DT.
+
+- When introducing a new flash add a flag for SFDP capable so we don't need a long list of flags for the flash.
+  - If SFDP is broken, use skip SFDP flag. Makes it clear what gets initialized how.
+
+mw:
+ - review PHY calib patches
+   -  NXP FAE at least responded that you have to do only once on the
+      LS1028A, but at the same time they didn't repsond to the question how
+      it behhaves when the temperature drifts
+      - NXP says it only needs to be done once.
+
+ - SFDP database: generate hash/crc for flashes SFDP tables and use the sha
+  as differentiator. Do we want to keep a DB?
+  - Might want to look into reading SFDP first.
+  - If the flash does not support the command does it ignore it?
+  - ta - action item!: to decide the read SFDP first idea
+  - tight related with the continuation codes and shared flash ID problem
+
+py: dynamically discover a flash even if there's no flash ID in the flash ID
+table - what's the use case? no strong opinions for now.
+
+vr:
+- Flashes that boot in 8D-8D-8D mode are another problem. Might be able to use SFDP to detect flash mode.
+- Read ID is the basic requirement to call a flash "jedec,spi-nor". If you don't have that then can't be JEDEC compatible.
+
+3/ What we'll try to do this week:
+Check the patchwork list and choose something that you're interested in:
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
+
+py:
+- Repost PHY series.
+
+ta:
+  Review:
+   - takahiro's spansion patches
+   - manuf specific ops:
+     https://patchwork.ozlabs.org/project/linux-mtd/list/?series=237043
+   - py's phy calib
+  Analyse/write code:
+   - FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver
+     under mtd
+   - parse manufacturer SFDP backbone -> applies to mchp's sst26 flashes,
+     they define a vendor specific sfdp table, where the memory organization
+     for the individual block protection is described. Parse that and add
+     Individual Block Locking ops.
+- Try to send ID collision patches.
+- Review 8D-8D-8D padding series.
+
+vr:
+
+mw:
+ - flash names list
+
+4/TODO queue - long term goal
+mw:
+a/ different flash names for same JEDEC vendor ID
+
+py:
+a/ Clean up how address width is calculated.
+
+ta:
+a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
+mtd.
+b/ SFDP init first, then flash_info static init if still needed
+c/ frequency sync between SPIMEM and SPI controller
+d/ SPI NOR documentation
+
+vr:
+a/ dummy.nbytes conversion to dummy.cycles
