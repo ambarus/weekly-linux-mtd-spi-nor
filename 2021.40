@@ -1,0 +1,53 @@
+Atendees: Pratyush, Tudor, Michael
+
+1/ What have I accomplished last week? Do I need a second opinion on a specific
+patch/topic?
+mw:
+
+py:
+
+ta:
+
+vr:
+
+2/ Topics that we want to discuss during the meeting:
+ta:
+- Need to re-roll the ID collisions patches. py to look at the comment replies
+  and see if they are fine.
+
+mw:
+
+py:
+- Comments from Boris about dropping flash IDs are that we can send a patch
+  converting them based on datasheet and ask the original developer who added
+  the flash to test/review them. Give them X releases to do so.
+
+vr:
+
+3/ What we'll try to do this week:
+Check the patchwork list and choose something that you're interested in:
+https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
+
+py:
+
+ta:
+- Repost ID collision patches.
+
+vr:
+
+4/TODO queue - long term goal
+mw:
+a/ different flash names for same JEDEC vendor ID
+
+py:
+a/ Clean up how address width is calculated.
+
+ta:
+a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
+mtd.
+b/ SFDP init first, then flash_info static init if still needed
+c/ frequency sync between SPIMEM and SPI controller
+d/ SPI NOR documentation
+
+vr:
+a/ dummy.nbytes conversion to dummy.cycles
