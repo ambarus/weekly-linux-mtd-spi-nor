@@ -1,9 +1,6 @@
 Atendees: Pratyush, Michael, Tudor
 
-1/ What have I accomplished last week? Do I need a second opinion on a specific
-patch/topic?
-
-2/ Topics that we want to discuss during the meeting:
+1/ Topics that we want to discuss during the meeting:
 ta:
 - PR at the end of the week - to propose, review and apply patches of minor
 importance
@@ -43,22 +40,7 @@ vr:
 - Read ID is the basic requirement to call a flash "jedec,spi-nor". If you don't have that then can't be JEDEC compatible.
 	- ta: Is this specified in JESD216?
 
-3/ What we'll try to do this week:
-Check the patchwork list and choose something that you're interested in:
-https://patchwork.ozlabs.org/project/linux-mtd/list/?series=&submitter=&state=&q=spi-nor&archive=&delegate=
-
-py:
-ta:
-  Analyse/write code:
-   - FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver
-     under mtd
-   - parse manufacturer SFDP backbone -> applies to mchp's sst26 flashes,
-     they define a vendor specific sfdp table, where the memory organization
-     for the individual block protection is described. Parse that and add
-     Individual Block Locking ops.
-- Review 8D-8D-8D padding series.
-
-4/TODO queue - long term goal
+2/TODO queue - long term goal
 mw:
 py:
 a/ Clean up how address width is calculated.
@@ -68,7 +50,10 @@ a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
 mtd.
 b/ SFDP init first, then flash_info static init if still needed
 c/ frequency sync between SPIMEM and SPI controller
-d/ SPI NOR documentation
+d/ parse manufacturer SFDP backbone -> applies to mchp's sst26 flashes,
+     they define a vendor specific sfdp table, where the memory organization
+     for the individual block protection is described. Parse that and add
+     Individual Block Locking ops.
 
 vr:
 a/ dummy.nbytes conversion to dummy.cycles
