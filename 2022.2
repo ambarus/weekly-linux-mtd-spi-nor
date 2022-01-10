@@ -1,0 +1,42 @@
+Atendees: Pratyush, Michael, Tudor
+
+1/ Topics that we want to discuss during the meeting:
+ta:
+- resend SPI NOR documentation, Collision ID patches, erase fixes
+
+mw:
+ - review PHY calib patches (with Pratyush)
+   -  NXP FAE at least responded that you have to do only once on the
+      LS1028A, but at the same time they didn't repsond to the question how
+      it behhaves when the temperature drifts
+      - NXP says it only needs to be done once.
+
+py:
+- kernel email address, repo write rights and patchwork access.
+- u-boot: SPI NOR reset sequence
+- u-boot: re-sync with linux kernel's SPI NOR's.
+- dynamically discover a flash even if there's no flash ID in the flash ID
+table - what's the use case? no strong opinions for now.
+
+vr:
+- Flashes that boot in 8D-8D-8D mode are another problem. Might be able to use SFDP to detect flash mode.
+- Read ID is the basic requirement to call a flash "jedec,spi-nor". If you don't have that then can't be JEDEC compatible.
+	- ta: Is this specified in JESD216?
+
+2/TODO queue - long term goal
+mw:
+py:
+a/ Clean up how address width is calculated.
+
+ta:
+a/ FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
+mtd.
+b/ SFDP init first, then flash_info static init if still needed
+c/ frequency sync between SPIMEM and SPI controller
+d/ parse manufacturer SFDP backbone -> applies to mchp's sst26 flashes,
+     they define a vendor specific sfdp table, where the memory organization
+     for the individual block protection is described. Parse that and add
+     Individual Block Locking ops.
+
+vr:
+a/ dummy.nbytes conversion to dummy.cycles
