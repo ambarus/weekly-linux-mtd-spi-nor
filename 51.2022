@@ -1,0 +1,39 @@
+Atendees: Michael, Tudor
+
+Patches ready to be integrated
+  https://patchwork.ozlabs.org/project/linux-mtd/list/?series=330995
+
+---
+1/ Topics that we want to discuss during the meeting:news:
+ta:
+- review patches, resend what I authored and left behind
+
+mw:
+- to choose patches that want to review and inform ta so that we don't duplicate
+effort
+
+py:
+
+2/TODO queue - long term goal
+mw:
+py:
+- Clean up how address width is calculated.
+
+ta:
+- FRAMs, MRAMs, SPI NORs, EEPROMs. Check if we can have a single driver under
+mtd.
+- frequency sync between SPIMEM and SPI controller
+- parse manufacturer SFDP backbone -> applies to mchp's sst26 flashes,
+     they define a vendor specific sfdp table, where the memory organization
+     for the individual block protection is described. Parse that and add
+     Individual Block Locking ops.
+
+not allocated:
+- dummy.nbytes conversion to dummy.cycles
+- SFDP decoder: let's add it in mtd-utils.
+    - mw proposed https://github.com/linuxhw/EDID as a reference
+    - license for sfdp dumps and parser
+    - how about integrating the sdfp parser int mtd-utils - david said it's ok
+    - sfdp binaries in https://git.kernel.org/pub/scm/linux/kernel/git/mtd/sfdp/
+    - mw already has some PoC regrading the SFDP decoder. Chose C for better
+      integration on embedded systems.
